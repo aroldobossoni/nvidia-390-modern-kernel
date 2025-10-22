@@ -76,13 +76,13 @@ PATCH_FILES=(
 
 # Download all patches
 for patch_name in "${PATCH_FILES[@]}"; do
-    patch_name_decoded=$(echo "$patch_name" | sed 's/%2B/+/g')
+    patch_name_decoded="${patch_name//%2B/+}"
     echo "Downloading: $patch_name_decoded"
     curl -s -o "$patch_name_decoded" "${BASE_URL}/${patch_name}"
 done
 
 echo ""
-echo "✓ $(ls -1 *.patch 2>/dev/null | wc -l) patches downloaded"
+echo "✓ $(find . -maxdepth 1 -name '*.patch' -type f 2>/dev/null | wc -l) patches downloaded"
 echo ""
 
 # Extract driver
