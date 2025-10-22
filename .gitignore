@@ -1,0 +1,54 @@
+# NVIDIA Driver Installation - GitIgnore
+
+# System documentation (server-specific)
+AGENTS.md
+
+# Driver binaries
+*.run
+NVIDIA-Linux-*/
+
+# Downloaded patches
+rpmfusion_patches/
+*.patch.bak
+
+# Build artifacts
+*.o
+*.ko
+*.mod.c
+*.mod
+.tmp_versions/
+Module.symvers
+modules.order
+
+# Logs
+*.log
+*.txt
+dkms.log
+make.log
+
+# Test files
+*.mp4
+*.mkv
+*.avi
+gpu_*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Sensitive data
+*.key
+*.pem
+credentials.*
+
